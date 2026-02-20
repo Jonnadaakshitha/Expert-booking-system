@@ -14,13 +14,8 @@ const ExpertList = () => {
     const fetchExperts = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`https://expert-booking-system-wyjl.onrender.com/api/experts`, {
-          params: {
-    search: search,    // Search by name
-    category: category, // Filter by category
-    page: page,        // Pagination
-    limit: 6
-  }
+        const res = await axios.get(`http://localhost:5000/api/experts`, {
+          params: { search, category, page, limit:6 }
         });
         setExperts(res.data);
       } catch (err) {
@@ -49,7 +44,7 @@ const ExpertList = () => {
           <option value="">All Categories</option>
           <option value="Technology">Technology</option>
           <option value="Fitness">Fitness</option>
-          <option value="Design">Design</option>
+          <option value="Designing">Design</option>
           <option value="Health">Health</option>
           <option value="Finance">Finance</option>
           <option value="Marketing">Marketing</option>

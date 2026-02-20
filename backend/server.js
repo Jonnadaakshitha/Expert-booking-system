@@ -32,8 +32,3 @@ app.set('socketio', io);
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-app.use(cors({
-  origin: ['https://your-vercel-link.vercel.app', 'http://localhost:3000'],
-  methods: ['GET', 'POST', 'PATCH'],
-  credentials: true
-}));
