@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://expert-booking-system-wyjl.onrender.com');
 
 const ExpertDetail = () => {
   const { id } = useParams();
@@ -18,8 +18,7 @@ const ExpertDetail = () => {
   const fetchExpertData = async () => {
     try {
       // 1. Get Expert Details
-      const res = await axios.get(`http://localhost:5000/api/experts/${id}`);
-      setExpert(res.data);
+      const response = await axios.get('https://expert-booking-system-wyjl.onrender.com/api/experts');      setExpert(res.data);
       
       // Inside ExpertDetail.js useEffect
       const bookingRes = await axios.get(`http://localhost:5000/api/bookings/expert/${id}`);

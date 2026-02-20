@@ -14,7 +14,7 @@ const ExpertList = () => {
     const fetchExperts = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5000/api/experts`, {
+        const res = await axios.get(`https://expert-booking-system-wyjl.onrender.com/api/experts`, {
           params: {
     search: search,    // Search by name
     category: category, // Filter by category
